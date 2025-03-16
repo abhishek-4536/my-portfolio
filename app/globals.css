@@ -1,0 +1,72 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Body Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+}
+
+/* Define base light and dark modes using CSS variables */
+@layer base {
+  :root {
+    /* Light Mode */
+    --background: white; /* White background */
+    --foreground: 240 10% 3.9%; /* Dark text */
+    --card: 0 0% 100%; /* White card */
+    --card-foreground: 240 10% 3.9%; /* Dark card text */
+    --primary: 240 5.9% 10%; /* Dark primary */
+    --primary-foreground: 0 0% 98%; /* Light text for primary */
+    --border: 240 5.9% 90%; /* Light border */
+    --input: 240 5.9% 90%; /* Input fields */
+    --ring: 240 10% 3.9%; /* Ring color */
+    --radius: 0.5rem; /* Border radius */
+  }
+
+  /* Dark Mode (when .dark class is present) */
+  .dark {
+    --background: 240 10% 3.9%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text */
+    --card: 240 10% 3.9%; /* Dark card */
+    --card-foreground: 0 0% 98%; /* Light text for card */
+    --primary: 0 0% 98%; /* Light primary */
+    --primary-foreground: 240 5.9% 10%; /* Dark text for primary */
+    --secondary: 240 3.7% 15.9%; /* Dark secondary */
+    --border: 240 3.7% 15.9%; /* Dark borders */
+    --input: 240 3.7% 15.9%; /* Dark input */
+    --ring: 240 4.9% 83.9%; /* Dark ring */
+  }
+}
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.scroll-animation {
+  display: flex;
+  gap: 3rem; /* gap-12 in Tailwind */
+  animation: scroll 20s linear infinite;
+  width: 200%; /* To allow seamless scrolling */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.text-outline{
+  text-shadow: 
+  2px 2px 0 #feb901,  /* Outline color */
+  -2px 2px 0 #feb901, 
+  2px -2px 0 #feb901, 
+  
+  -2px -2px 0 #feb901;
+}
