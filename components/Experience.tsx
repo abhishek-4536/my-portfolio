@@ -1,6 +1,17 @@
 import Image from "next/image";
+type experienceProps = {
+    id: number;
+    year: string;
+    role: string;
+    title: string;
+    company: string;
+    location: string;
+    learnings: string[];
+    url: string;
+    logo: string;
+}
 
-const experienceData = [
+const experienceData :experienceProps[]= [
     {
         id: 1,
         year: "September 2024 - Present",
@@ -35,7 +46,7 @@ const experienceData = [
     }
 ];
 
-const ExperienceCard = ({ data }: any) => (
+const ExperienceCard = ({ data }: { data: experienceProps }) => (
     <div className="w-full relative z-10 group">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%] aspect-square bg-mainColor rounded-full blur-lg -z-10"></div>
         <div className="w-full h-full bg-[#ffffff] bg-opacity-70 flex flex-col items-start justify-between gap-2 sm:gap-4 md:gap-6 lg:gap-8 p-4 md:p-6 lg:p-8 rounded-[30px] md:rounded-[40px] z-20 backdrop-blur-lg hover:bg-opacity-100 ease-out duration-300 transition-all cursor-pointer">

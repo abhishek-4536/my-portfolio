@@ -1,6 +1,19 @@
 import Image from "next/image";
 
-const interests = [
+type interestsProps = {
+  id: number;
+  name: string;
+  icon: string;
+  color: string;
+};
+
+type statsProps = {
+  id: number;
+  value: string;
+  label: string;
+};
+
+const interests :interestsProps[]= [
   {
     id: 1,
     name: "Listening to Music",
@@ -17,7 +30,7 @@ const interests = [
   { id: 4, name: "Money", icon: "/images/money.svg", color: "#06a048" },
 ];
 
-const stats = [
+const stats :statsProps[]= [
   { id: 1, value: "1.7+", label: "Years Experience" },
   { id: 2, value: "10+", label: "Project Completed" },
 ];
