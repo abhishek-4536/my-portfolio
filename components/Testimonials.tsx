@@ -1,6 +1,15 @@
 import Image from "next/image";
 
-const testimonials = [
+type TestimonialProps = {
+    id: number;
+    name: string;
+    location: string;
+    feedback: string;
+    rating: number;
+    flag: string;
+}
+
+const testimonials :TestimonialProps[]= [
     {
         id: 1,
         name: "Rupam karmakar",
