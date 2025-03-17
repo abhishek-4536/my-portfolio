@@ -17,7 +17,7 @@ const skillsData: skillsProps[] = [
   { id: 8, name: "Redux Toolkit", image: "/images/redux-toolkit.png" },
 ];
 const Home = () => {
-  //   const skills : SkillsProps = [...skillsData, ...skillsData];
+  // const skills = [...skillsData, ...skillsData];
   return (
     <>
       <div className="w-full">

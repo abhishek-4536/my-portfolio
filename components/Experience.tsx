@@ -1,31 +1,30 @@
 import Image from "next/image";
-type experienceType = {
-  id: number;
-  year: string;
-  role: string;
-  title: string;
-  company: string;
-  location: string;
-  learnings: string[];
-  url: string;
-  logo: string;
-};
-type ExperienceProps = experienceType[];
+type experienceProps = {
+    id: number;
+    year: string;
+    role: string;
+    title: string;
+    company: string;
+    location: string;
+    learnings: string[];
+    url: string;
+    logo: string;
+}
 
-const experienceData: ExperienceProps = [
-  {
-    id: 1,
-    year: "September 2024 - Present",
-    role: "Frontend Developer",
-    title: "Frontend Developer",
-    company: "Unify Tech Solutions Pvt Ltd",
-    location: "Sector 67, Mohali, Punjab, India",
-    learnings: [
-      "Developed responsive UI components using ReactJS and NextJS",
-      "Implemented dynamic animations with Tailwind CSS",
-      "Proficiently handled API integrations, ensuring seamless data exchange, and played an integral role in reviewing and approving/rejecting junior developers' pull requests on GitHub. Additionally, actively assigned tasks to junior team members in alignment with sprint objectives, fostering efficient project management.",
-      "Improved website performance through code optimization",
-    ],
+const experienceData :experienceProps[]= [
+    {
+        id: 1,
+        year: "September 2024 - Present",
+        role: "Frontend Developer",
+        title: "Frontend Developer",
+        company: "Unify Tech Solutions Pvt Ltd",
+        location: "Sector 67, Mohali, Punjab, India",
+        learnings: [
+            "Developed responsive UI components using ReactJS and NextJS",
+            "Implemented dynamic animations with Tailwind CSS",
+            "Proficiently handled API integrations, ensuring seamless data exchange, and played an integral role in reviewing and approving/rejecting junior developers' pull requests on GitHub. Additionally, actively assigned tasks to junior team members in alignment with sprint objectives, fostering efficient project management.",
+            "Improved website performance through code optimization"
+        ],
 
     url: "https://www.unifytechsolutions.com/",
     logo: "/images/unifytechsolution.png",
@@ -47,25 +46,13 @@ const experienceData: ExperienceProps = [
   },
 ];
 
-const ExperienceCard = ({ data }: { data: experienceType }) => (
-  <div className="w-full relative z-10 group">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%] aspect-square bg-mainColor rounded-full blur-lg -z-10"></div>
-    <div className="w-full h-full bg-[#ffffff] bg-opacity-70 flex flex-col items-start justify-between gap-2 sm:gap-4 md:gap-6 lg:gap-8 p-4 md:p-6 lg:p-8 rounded-[30px] md:rounded-[40px] z-20 backdrop-blur-lg hover:bg-opacity-100 ease-out duration-300 transition-all cursor-pointer">
-      <div className="w-full flex flex-wrap items-center gap-2 lg:gap-6 justify-between">
-        <div className="flex items-center gap-2 lg:gap-4 pr-7 rounded-full bg-black">
-          <div className="bg-[#ffffff] rounded-full overflow-hidden p-3 md:p-4 border border-black">
-            <Image
-              src="/images/memoji.svg"
-              alt="Calendar"
-              width={34}
-              height={34}
-              className="w-5 sm:w-6 md:w-8 lg:w-auto"
-            />
-          </div>
-          <div className="flex flex-col items-start lg:gap-1">
-            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-mainColor">
-              {data?.company}
-            </h1>
+const ExperienceCard = ({ data }: { data: experienceProps }) => (
+    <div className="w-full relative z-10 group">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%] aspect-square bg-mainColor rounded-full blur-lg -z-10"></div>
+        <div className="w-full h-full bg-[#ffffff] bg-opacity-70 flex flex-col items-start justify-between gap-2 sm:gap-4 md:gap-6 lg:gap-8 p-4 md:p-6 lg:p-8 rounded-[30px] md:rounded-[40px] z-20 backdrop-blur-lg hover:bg-opacity-100 ease-out duration-300 transition-all cursor-pointer">
+            <div className="w-full flex flex-wrap items-center gap-2 lg:gap-6 justify-between">
+                <div className="flex items-center gap-2 lg:gap-4 pr-7 rounded-full bg-black">
+                    <div className="bg-[#ffffff] rounded-full overflow-hidden p-3 md:p-4 border border-black">
 
             <div className="flex items-center gap-1">
               <div className="bg-[#3d3d3d] rounded-full p-1">

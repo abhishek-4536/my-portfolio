@@ -1,4 +1,10 @@
 import Image from "next/image";
+interface InputFieldProps {
+  type: string;
+  placeholder: string;
+  name: string;
+  icon?: "user" | "mail" | "phone" | "subject" | string; // add more as needed
+}
 
 interface InputFieldProps {
   type: string;
@@ -49,7 +55,7 @@ const ContactMe = () => {
               type="text"
               placeholder="Subject *"
               name="subject"
-              icon="subject"
+              icon=""
             />
           </div>
 
@@ -86,6 +92,8 @@ const ContactMe = () => {
     </div>
   );
 };
+
+// Reusable Input Field Component
 const InputField = ({ type, placeholder, name, icon }: InputFieldProps) => (
   <div className="w-full flex flex-col items-start gap-2">
     <div className="w-full flex items-center bg-[#f3f3f3] gap-2 sm:gap-3 md:gap-4 lg:gap-5 border rounded-full px-4 sm:px-6 md:px-6 lg:px-9 text-sm sm:text-base md:text-lg lg:text-xl error-input ">
