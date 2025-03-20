@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import {sendMessage } from "../server/action";
+
 interface InputFieldProps {
   type: string;
   placeholder: string;
@@ -7,6 +10,28 @@ interface InputFieldProps {
 }
 
 const ContactMe = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    // Extract form data dynamically
+    const formData = {
+      fullName: (e.currentTarget.elements.namedItem("fullName") as HTMLInputElement).value,
+      email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (e.currentTarget.elements.namedItem("subject") as HTMLInputElement).value,
+      phone: (e.currentTarget.elements.namedItem("phone") as HTMLInputElement).value,
+      message: (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value,
+    };
+  
+    console.log("Received form data:", formData);
+  
+    try {
+      // Send the message using the sendMessage function
+      const result = await sendMessage();
+      console.log(result, "************************");
+    } catch (error) {
+      console.error(error, "************************");
+    }
+  };
   return (
     <div
       id="contact-me"
@@ -22,8 +47,8 @@ const ContactMe = () => {
       </div>
 
       <div className="w-full flex flex-col items-center p-6 sm:p-8 md:p-10 lg:p-12 rounded-[30px] md:rounded-[40px] lg:rounded-[50px]">
-        <form className="mt-6 sm:mt-8 md:mt-10 lg:mt-14 w-full flex flex-col items-start gap-8">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5">
+        <form className="mt-6 sm:mt-8 md:mt-10 lg:mt-14 w-full flex flex-col items-start gap-8"  onSubmit={handleSubmit}>
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5" >
             <InputField
               type="text"
               placeholder="Full Name *"
