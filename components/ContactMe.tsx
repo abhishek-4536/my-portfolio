@@ -9,6 +9,12 @@ interface InputFieldProps {
   icon?: "user" | "mail" | "phone" | "subject" | string; // add more as needed
 }
 
+interface InputFieldProps {
+  type: string;
+  placeholder: string;
+  name: string;
+  icon?: "user" | "mail" | "phone" | "subject" | string;
+}
 const ContactMe = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
